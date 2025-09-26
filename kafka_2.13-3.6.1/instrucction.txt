@@ -1,0 +1,9 @@
+./start-kafka.sh
+Con este iniciamo Kafka en BackGround en el puerto 9092 y se
+crea el topic "empleados-creados" utilizado por nuestra API.
+
+./stop-kafka.sh
+Con este detenemos por completo el broker.
+
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic empleados-creados --from-beginning
+Visualizamos escuchamos el topic con el consumer de consola
