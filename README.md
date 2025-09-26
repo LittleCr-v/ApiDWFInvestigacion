@@ -22,7 +22,7 @@ Permite realizar operaciones CRUD sobre los empleados y se puede probar mediante
 1. Abre una terminal en la carpeta `kafka_2.13-3.6.1`.
 2. Ejecuta el script de inicio:
 
-./start-kafka.sh
+#### ./start-kafka.sh
 
 3. Espera a que Kafka indique que el servicio está corriendo correctamente.
 
