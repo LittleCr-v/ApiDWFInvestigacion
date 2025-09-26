@@ -36,22 +36,22 @@ Permite realizar operaciones CRUD sobre los empleados y se puede probar mediante
 
 ### Endpoints de la API
 1. Obtener todos los empleado:
-  #### GET /api/empleados
+   GET /api/empleados
 Devuelve una lista de todos los empleados almacenados en la base de datos H2.
 
 2. Obtener un empleado por ID
-   #### GET /api/empleados/{id}
+   GET /api/empleados/{id}
 Devuelve el empleado correspondiente al ID proporcionado.
 Si el ID no existe, retorna un mensaje de error.
 
 3. Crear un nuevo empleado
-  #### POST /api/empleados
-  #### Content-Type: application/json
-  #### {
-    #### "nombre": "Fatima Ruiz",
-    #### "puesto": "Facturador",
-    #### "salario": 2500.50
-  #### }
+   POST /api/empleados
+   Content-Type: application/json
+  {
+    "nombre": "Fatima Ruiz",
+    "puesto": "Facturador",
+   "salario": 2500.50
+  }
 Inserta un nuevo empleado en la base de datos.
 
 4. Actualizar un empleado
