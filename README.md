@@ -1,46 +1,80 @@
 # ApiDWFInvestigacion
-# Instrucciones para el inicio de la API
 
-Para comenzar debes levantar kafka mediante la terminal, abre una terminal en la carpeta de "kafka_2.13-3.6.1" y ejecuta el comando 
-# ./start-kafka.sh
-De esta manera veras que el servicio comezara a levantarse, al estar arriba veras un mensaje de aviso el cual te dira que el servicio esta corriendo.
+## Descripción
+Este proyecto es una API para la gestión de empleados, construida con **Java y Spring Boot**. La API utiliza **H2 Database** para almacenar los datos y **Kafka** para la comunicación de eventos.  
 
-Una vez realizado esto ya puede iniciar la API desde el ID, ejecutando la clase principal.
+Permite realizar operaciones CRUD sobre los empleados y se puede probar mediante herramientas como **Postman**.
 
-Las pruebas se pueden realizar mediante Postman o cualquier otro programa parecido para el Test de API's.
+---
 
-# Formas de prueba:
+## Requisitos previos
+- Java 17 o superior
+- Maven
+- Kafka (versión 3.6.1)
+- IDE compatible con Java (IntelliJ IDEA, Eclipse, etc.)
+- Postman o cualquier herramienta para test de APIs
 
-# GET http://localhost:8080/api/empleados
-Se obtendran todos los empleado ingresados desde que se inicio la API teniendo en cuenta que esta tiene una bdd de H2.
+---
 
-# GET http://localhost:8080/api/empleados/{id}
-Se obtendra el empleado buscado por su id, si dicho id no existe se nos dara un mensaje de error.
+## Configuración y ejecución
 
-# POST http://localhost:8080/api/empleados
-# {
-#  "nombre": "Fatima Ruiz",
-#  "puesto": "Facturador",
-#  "salario": 2500.50
-# }
+### 1. Levantar Kafka
+1. Abre una terminal en la carpeta `kafka_2.13-3.6.1`.
+2. Ejecuta el script de inicio:
 
-De esta manera podremos ingresar empleado a nuestra base de datos de H2.
+./start-kafka.sh
 
-# PUT http://localhost:8080/api/empleados/{id}
-# {
-#  "nombre": "Fatima Ruiz",
-#  "puesto": "Líder Cuentas",
-#  "salario": 1800.75
-# }
+3. Espera a que Kafka indique que el servicio está corriendo correctamente.
 
-Actualizar empleado mediante su id.
+### 2. Ejecutar la API
+1. Abre tu IDE y carga el proyecto.
+2. Ejecuta la clase principal:
+   
+com.dwfin.ApiDwfTeoApplication
 
-# DELETE http://localhost:8080/api/empleados/{id}
+3. La API se levantará en http://localhost:8080/
 
-Eliminaremos al empleado mediante su id.
+### Endpoints de la API
+1. Obtener todos los empleado:
+   GET /api/empleados
+Devuelve una lista de todos los empleados almacenados en la base de datos H2.
 
-Creadores:
-Daniel Alexander Girón Cornejo
-Cristian Gerardo Ventura Rendón
-Francisco Armando Morales Flores
-Diego Fernando Ruiz Valle
+2. Obtener un empleado por ID
+   GET /api/empleados/{id}
+Devuelve el empleado correspondiente al ID proporcionado.
+Si el ID no existe, retorna un mensaje de error.
+
+3. Crear un nuevo empleado
+  POST /api/empleados
+  Content-Type: application/json
+  {
+    "nombre": "Fatima Ruiz",
+    "puesto": "Facturador",
+    "salario": 2500.50
+  }
+Inserta un nuevo empleado en la base de datos.
+
+4. Actualizar un empleado
+  PUT /api/empleados/{id}
+  Content-Type: application/json
+  {
+    "nombre": "Fatima Ruiz",
+    "puesto": "Líder Cuentas",
+    "salario": 1800.75
+  }
+Actualiza los datos del empleado identificado por el ID.
+
+5. Eliminar un empleado
+  DELETE /api/empleados/{id}
+Elimina el empleado identificado por el ID.
+
+### Notas
+- La base de datos utilizada es H2 (en memoria). Los datos se perderán al reiniciar la aplicación.
+- Kafka debe estar corriendo antes de iniciar la API para que los eventos se gestionen correctamente.
+
+### Creadores
+
+- Daniel Alexander Girón Cornejo
+- Cristian Gerardo Ventura Rendón
+- Francisco Armando Morales Flores
+- Diego Fernando Ruiz Valle
