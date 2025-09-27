@@ -78,3 +78,6 @@ Elimina el empleado identificado por el ID.
 - Cristian Gerardo Ventura Rendón
 - Francisco Armando Morales Flores
 - Diego Fernando Ruiz Valle
+- ###Link videos
+- Video Api:https://drive.google.com/file/d/1-lv7FcNX4o8DUV_duKIcYZeq_mmgjdiO/view?usp=sharing
+- Video invetigación:https://drive.google.com/file/d/1inn4sfQGnLeKD-H63RX5PuOrANLiTffM/view?usp=sharing
